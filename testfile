@@ -1,0 +1,12 @@
+# scripts run with npm. to build to package.json
+# in command line in directory `.../mobiledlr/dist`
+# `node ./tasks/buildPackage`
+scripts:
+
+  # bring together api.yml file with d.ts definitions
+  # print to public
+  api: |
+    cpx "../ts/api/**" api
+    && node ./tasks/api-generator.js
+  browserify: browserify
+  deploy: node ./tasks/deploy.js
